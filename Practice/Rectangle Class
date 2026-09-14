@@ -1,4 +1,4 @@
-<H3> Problem Statement: </H3>
+Problem Statement:
 Design Rect class with: data members: length and breadth
 member functions:
 setLength()
@@ -17,7 +17,7 @@ Make one object each using these constructors
 Show the objects
 
 
-<H3> Code: </H3>
+Code:
 
 #include<iostream>
 using namespace std;
