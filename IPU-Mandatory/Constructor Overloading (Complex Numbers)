@@ -1,0 +1,52 @@
+Problem Statement:
+Implement constructor
+overloading in a Complex class and perform addition of complex numbers.
+
+- Your solution should define a class for Complex that defines state
+attributes of the class, constructor for the class and show() and add()
+methods on the class. 
+
+- The add method which takes an object of type Complex as input and returns
+an object of type Complex that stores the result of addition of two Complex
+objects.
+
+- The show method prints the complex object in the form (<real part>
++ <img part) i>
+
+
+Code: 
+
+#include<iostream>
+using namespace std;
+class complex{
+    int re,im;
+    public:
+        complex(){
+            re=0;
+            im=0;
+        }
+        complex(int r, int i){
+            re=r;
+            im=i;
+        }
+        complex add(complex c){
+            complex temp;
+            temp.re=re+c.re;
+            temp.im=im+c.im;
+            return temp;
+        }
+        void show(){
+            cout<<re<<"+"<<im<<"i";
+        }
+};
+int main(){
+    complex c1(5,6);
+    complex c2(2,3);
+    complex c3=c1.add(c2);
+    cout<<"The first complex number is ";
+    c1.show();
+    cout<<endl<<"The second complex number is ";
+    c2.show();
+    cout<<endl<<"The sum of the two complex numbers is ";
+    c3.show();
+}
