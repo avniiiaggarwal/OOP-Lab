@@ -1,0 +1,50 @@
+Problem Statement:
+
+A system has current CPU and memory utilization. 
+If CPU utilization is below memory utilization, a CPU-intensive task may be started. 
+If memory utilization is below CPU utilization, a memory-intensive task may be started. 
+Write a program using a friend function to determine which type of task should be started based on the current CPU and memory utilization 
+(that are part of CPU and Memory classes respectively).
+
+
+Code:
+
+#include<iostream>
+using namespace std;
+class memory;
+class cpu{
+	int utilization;
+	public:
+	cpu(){
+		utilization=0;
+	}
+	cpu(int u1){
+		utilization=u1;
+	}
+	friend void select_task(cpu x, memory y);
+};
+class memory{
+	int utilization;
+	public:
+		memory(){
+			utilization=0;
+		}
+		memory(int u2){
+			utilization=u2;
+		}
+		friend void select_task(cpu x, memory y);
+};
+void select_task(cpu x, memory y){
+		if(x.utilization>y.utilization){
+			cout<<"Perform a memory-intensive task."<<endl;
+		}
+		else{
+			cout<<"Perform a CPU-intensive task.";
+		}
+}
+int main(){
+	cpu u1(35);
+	memory u2(66);
+	select_task(u1,u2);
+	return 0;
+}
