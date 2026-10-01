@@ -1,5 +1,4 @@
 Problem Statement:
-
 A system has current CPU and memory utilization. 
 If CPU utilization is below memory utilization, a CPU-intensive task may be started. 
 If memory utilization is below CPU utilization, a memory-intensive task may be started. 
