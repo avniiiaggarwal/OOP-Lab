@@ -1,5 +1,4 @@
 Problem Statement:
-
 Implement a string class containing following functions:
 * overload + operator to carry out concatenation of strings
 * overload = operator to carry out string copy
