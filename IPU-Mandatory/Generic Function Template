@@ -1,0 +1,17 @@
+Problem Statement:
+Write a function template to compute the square of values of different data types.
+
+Code:
+
+#include<iostream>
+using namespace std;
+template <typename T>
+T squareOf(T a){
+	return (a*a);
+}
+int main(){
+	cout<<squareOf(9)<<endl;
+cout<<squareOf(2.5)<<endl;
+cout<<squareOf(32.03856);
+	return 0;
+}
