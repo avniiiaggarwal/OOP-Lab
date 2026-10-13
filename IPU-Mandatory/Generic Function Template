@@ -11,7 +11,7 @@ T squareOf(T a){
 }
 int main(){
 	cout<<squareOf(9)<<endl;
-cout<<squareOf(2.5)<<endl;
-cout<<squareOf(32.03856);
+	cout<<squareOf(2.5)<<endl;
+	cout<<squareOf(32.03856);
 	return 0;
 }
