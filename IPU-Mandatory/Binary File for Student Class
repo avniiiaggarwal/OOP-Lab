@@ -1,0 +1,50 @@
+Problem Statement:
+Create a class: Student
+Store: name, age, sex, height, weight
+Member function 1: readData(). Take keyboard input.
+Member function 2: show(). Display object.
+Store and retrieve Student objects using write() and read().
+
+Code:
+
+#include<iostream>
+#include<fstream>
+#include<string>
+using namespace std;
+class Student{
+	string name;
+	int age;
+	char sex;
+	float height;
+	float weight;
+	public:
+	void readData(){
+		cout<<"Enter the name: ";
+		getline(cin, name);
+		cout<<endl<<"Enter the age: ";
+		cin>> age;
+		cout<<endl<<"Enter M for male and F for female: ";
+		cin>>sex;
+		cout<<endl<<"Enter the height: ";
+		cin>>height;
+		cout<<endl<<"Enter the weight: ";
+		cin>>weight;
+	}
+	void show(){
+		cout<<endl<<"The student details are: "<<endl;
+		cout<<"Name: "<<name<<endl<<"Age: "<<age<<endl<<"Sex: "<<sex<<endl<<"Height: "<<height<<endl<<"Weight: "<<weight<<endl;
+	}
+};
+int main(){
+	Student s1;
+	s1.readData();
+	s1.show();
+	ofstream out("student.dat", ios::binary);
+	out.write((char *) &s1, sizeof(s1));
+	out.close();
+	ifstream in("student.dat", ios::binary);
+	Student t;
+	in.read((char *) &t, sizeof(t));
+	t.show();
+	in.close();
+}
